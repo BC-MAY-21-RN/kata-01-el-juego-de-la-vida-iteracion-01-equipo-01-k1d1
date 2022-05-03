@@ -20,6 +20,21 @@ function crearTablero(w,h){
 function reglasVida(){
     
 }
+
+function counter (tablero, x, y) {
+    // Movimiento hacia los vecinos
+    let moveX = new Array(0, 0, 1, -1, -1, -1, 1, 1);
+    let moveY = new Array(1, -1, 0, 0, 1, -1, -1, 1);
+    let cnt = 0;
+    for (let cell = 0; cell < 8; cell++) {
+      let mox = x + moveX[cell];
+      let moy = y + moveY[cell];
+      if (tablero[mox][moy] == '*') {
+        cnt += 1;
+      }
+    }
+    return cnt;
+}
 /*  
 
 1 toda celda viva con menos de 2 vecinos vivos muere
