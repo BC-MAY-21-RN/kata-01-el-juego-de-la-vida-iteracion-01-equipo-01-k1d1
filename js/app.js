@@ -1,9 +1,20 @@
 const main = () => {
-  let weight = prompt("Ingresa el columnas: "); //ancho
-  let height = prompt("Ingresa el filas: ");  //alto
+
+  let weight = prompt("Ingresa las columnas: ");  //alto
+  if (weight < 3){
+    weight = prompt("Ingresa una valor(altura) mayor que 3: ");
+  }
+  let height = prompt("Ingresa el filas: ");  //ancho
+  if (height < 3){
+    height = prompt("Ingresa una valor(anchura) mayor que 3: "); 
+  }
+  
+  
   let matrizTablero = crearTablero(weight, height);
   console.log(matrizTablero);
 };
+
+//
 
 //Función para declarar la matriz
 function crearTablero(w,h){
@@ -15,7 +26,12 @@ function crearTablero(w,h){
             if(randomNumber < 0.9){
                 matriz[x][y] = "-";
             }else{
-                matriz[x][y] = "*";
+                if(x != 0 && x != w  && y != 0 && y != h){
+                    matriz[x][y] = "*";
+                }else{
+                    matriz[x][y] = "-";
+                }
+                
             }
         }
     }
@@ -55,10 +71,6 @@ function counter (tablero, x, y) {
     }
     return cnt;
 }
-function Peticion(text){
-
-}
-
 /*
 ["-"],["-"],["-"],["-"]
 ["-"],["*"],["-"],["-"]
