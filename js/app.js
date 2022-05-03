@@ -29,6 +29,13 @@ function rules(array) {
     for (let i= 1; i < array.length() - 1; i++){
         for(let j = 1; j <= array.length() -1; j++){
             vivas = counter(array,i,j);
+            if (array[i][j] == '*' && vivas < 2) {
+                arrayCopy[i][j] = '.';
+            } else if (array[i][j] == '*' && vivas > 3) {
+                arrayCopy[i][j] = '.';
+            } else if (array[i][j] == '.' && vivas == 3) {
+                arrayCopy[i][j] = '*';
+            }
         }
     }
     return arrayCopy;
@@ -48,7 +55,9 @@ function counter (tablero, x, y) {
     }
     return cnt;
 }
-fuction
+function Peticion(text){
+
+}
 
 /*
 ["-"],["-"],["-"],["-"]
