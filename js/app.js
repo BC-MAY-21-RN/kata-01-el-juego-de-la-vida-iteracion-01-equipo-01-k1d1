@@ -21,7 +21,6 @@ function crearTablero(w,h){
     }
     return matriz;
 }
-
 function rules(array) {
     let vivas = 0;
     let posicion = [];
@@ -49,6 +48,7 @@ function counter (tablero, x, y) {
     }
     return cnt;
 }
+fuction
 
 /*
 ["-"],["-"],["-"],["-"]
